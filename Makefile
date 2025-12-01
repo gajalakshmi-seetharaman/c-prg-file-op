@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall
 
 # Build all programs
-all: file_ops mean_age numbers
+all: file_ops mean_age numbers height
 
 # Build file operations program
 file_ops:
@@ -17,9 +17,13 @@ mean_age:
 numbers:
 	$(CC) $(CFLAGS) -o numbers numbers.c
 
+# Build height program
+height:
+	$(CC) $(CFLAGS) -o height height.c
+
 # Clean everything
 clean:
-	rm -f file_ops mean_age numbers even.txt odd.txt
+	rm -f file_ops mean_age numbers height even.txt odd.txt heights.txt
 
 # Run file operations program
 run: file_ops
@@ -32,3 +36,7 @@ run-mean: mean_age
 # Run numbers program
 run-numbers: numbers
 	./numbers
+
+# Run height program
+run-height: height
+	./height
